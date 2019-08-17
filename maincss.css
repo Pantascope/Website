@@ -470,6 +470,10 @@ fieldset {
         justify-content: space-between;
         margin: 0 0 20vw 0;
     }
+
+    .navLinks{
+        width: 25%;
+    }
     
     
     /*  Text Links  */
@@ -1499,22 +1503,23 @@ fieldset {
     
   }
 
-#contact input[type="text"],
-#contact input[type="email"],
-#contact input[type="tel"],
-#contact input[type="url"],
-#contact textarea {
-  border: 1px solid #ccc;
-  background: #FFF;
-  padding: 10px;
-  margin: 0 0 16px 0;
-  width: 100%;
-  border-radius: 6px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: 'New Haas Unica W1G', 'helvetica', sans-serif;
-}
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact input[type="tel"],
+  #contact input[type="url"],
+  #contact textarea {
+    border: 1px solid #ccc;
+    background: #FFF;
+    padding: 15px;
+    margin: 0 0 16px 0;
+    width: 100%;
+    border-radius: 6px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'New Haas Unica W1G', 'helvetica', sans-serif;
+    font-size: 16px;
+  }
 
 #contact input:focus,
 #contact textarea:focus {
@@ -1710,6 +1715,7 @@ fieldset {
     color: var(--black);
     line-height: 42px;
     width: 100px;
+    height: 40px;
     text-align: center;
     font-size: 16px;
     font-weight: 700;
@@ -1940,7 +1946,7 @@ fieldset {
 #contact textarea {
   border: 1px solid #ccc;
   background: #FFF;
-  padding: 10px;
+  padding: 15px;
   margin: 0 0 16px 0;
   width: 100%;
   border-radius: 6px;
@@ -1948,6 +1954,7 @@ fieldset {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: 'New Haas Unica W1G', 'helvetica', sans-serif;
+  font-size: 16px;
 }
 
 #contact input:focus,
