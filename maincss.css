@@ -1,66 +1,419 @@
 
 
  /* Universal CSS agnostic of size */
-:root{
-    --black: #191818;
-    --gray: #868E96;
-    --white: #ffffff;
+
+
+*{
+    margin: 0;
+    padding: 0;
 }
+
+html{scroll-behavior: smooth;}
 
 
 body{
     font-family: 'New Haas Unica W1G', 'helvetica', sans-serif;
-}
-
-
-.headerlogo {
-    fill: var(--black);
-    width: 260px;
-    margin: 20vh auto 60px auto;
+    --black: #191818;
+    --gray: #868E96;
+    --white: #ffffff;
+    --1xspacing: 8vw;
+    --2xspacing: 16vw;
+    --3xspacing: 24vw;
+    --4xspacing: 32vw;
+    --5xspacing: 40vw;
     
 }
 
 
-.maincontainer{
 
+
+
+ /* tiny devices (phones, below 480px) */
+ @media only screen and (max-width: 480px) {
+    
+
+
+/*  This makes the BG video work  */
+.bannerVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    }
+
+.headerLogo {
+    fill: var(--white);
+    width: 120px;
+}
+
+.masterContainer{
     width: 100%;
-    text-align: center;
 }
 
-.welcometitle{
- width: 40vw;
- margin: 0 auto;
-}
-
-.introcopy{
-
-}
-
-.devdisclaimer{
- font-size: 12px;
- color: var(--gray);
+/*  This sets up the flexbox for the whole body  */
+.gutterContainer{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
-.demoCTA{
+/*  This holds the hero row including the BG video  */
+.heroRow{
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    padding: 20vw var(--1xspacing);
+}
+
+.navHeader{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20vw 0;
+}
+
+
+/*  Text Links  */
+.menuItem{
+ display: none;
+}
+
+.menuCTA{
     display: block;
-    width: 100px;
-    height: 40px;
-    margin: 40px auto;
-    background-color: var(--black);
-    border-radius: 6px;
-    color: var(--white);
-    text-decoration: none;
-    font-size: 16px;
-    font-style: bold;
+    border-radius: 8px;
+    background-color: var(--white);
+    color: var(--black);
     line-height: 42px;
+    width: 25vw;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.heroHeadline{
+    margin: 0 0 20vw 0;
     text-align: center;
 }
 
-.demoCTA:hover{
-    opacity: 0.9;
+.videoBtn{
+ display: block;
+ width: 120px;
+ height: 120px;
+ border-radius: 60px;
+ border: 1px solid #ffffff;
+ text-align: center;
+ line-height: 120px;
+ margin:0 auto;
 }
 
+.videoBtn:hover{
+    background-color: #fff;
+    color: var(--black);
+}
+
+.videoLink{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+/*  Hero section ends here  */
+
+
+
+.subheaderRow{
+    margin: var(--3xspacing) var(--1xspacing) var(--2xspacing) var(--1xspacing);
+    padding: 0 0 var(--3xspacing) 0;
+    border-bottom: 1px solid var(--black);
+}
+
+
+/*  Three Reasons  */
+.threeReasonsRow{
+    margin: 0 var(--1xspacing);
+}
+
+.reason{
+    margin: 0 0 var(--2xspacing) 0;
+}
+
+.reason h4 {
+    padding: 0 0 20px 0;
+}
+
+.reason p {
+    line-height: 150%;
+}
+
+
+
+
+
+
+/*  The sidescolling gallery starts here  */
+
+.galleryRow{
+    background-color: var(--black);
+    margin: var(--2xspacing) 0;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: var(--3xspacing) var(--1xspacing) var(--3xspacing) 0;
+}
+
+.galleryRow::-webkit-scrollbar {display: none;}
+
+.galleryRow img {
+    height: 40vh;
+    margin: 0 var(--1xspacing);
+}
+
+.galleryPadding{
+    margin-right: var(--1xspacing);
+    color: var(--black);
+}
+
+
+
+
+
+
+/*  Capabilities Row starts here  */
+
+.capabilitiesIntroRow{
+    padding: var(--2xspacing) 0 0 0;
+    margin: 0 var(--1xspacing);
+}
+
+.capabilitiesTitle{
+    font-size: 28px;
+    padding-bottom: var(--1xspacing);
+}
+
+.capabilitiesContent h5 {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    padding: 0 0 var(--1xspacing) 0;
+}
+
+
+.capabilitiesContent ul {
+    list-style: none;
+}
+
+.capabilitiesContent ul>li {
+    padding: 12px 0 0 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.capabilitiesColumns{
+    margin: 0 var(--1xspacing);
+}
+
+.capabilitiesCategory{
+    border-top: 1px solid var(--black);
+    margin: var(--4xspacing) 0;
+}
+
+.capabilitiesCategory h2 {
+    padding: 16px 0 0 0;
+}
+
+.capabilitiesCategory ul {
+    
+    margin: var(--1xspacing) 0 var(--1xspacing) 16px;
+}
+
+.capabilitiesCategory ul>li {
+    margin: 8px 0 0 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.categoryIntro{
+ font-size: 20px;
+ line-height: 150%;
+ margin: var(--1xspacing) 0;
+}
+
+.categoryBody{
+    font-size: 16px;
+ line-height: 150%;
+    
+}
+
+.disclaimer{
+    font-size: 12px;
+    font-style: italic;
+    color: var(--gray);
+}
+
+
+
+
+
+
+
+/*  Contact Form stuff starts here  */
+
+
+
+.footerCTArow{
+    background-color: #F5F5F5;
+}
+
+.footerCTArow h3{
+    margin: var(--3xspacing) var(--1xspacing);
+    text-align:center;
+    line-height: 125%;
+    font-size: 24px;
+}
+
+#contact{
+    margin: 0 var(--1xspacing) var(--4xspacing) var(--1xspacing);
+}
+
+fieldset {
+    border:none !important;
+    min-width: 100%;
+    padding: 0;
+    
+  }
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  border: 1px solid #ccc;
+  background: #FFF;
+  padding: 10px;
+  margin: 0 0 16px 0;
+  width: 100%;
+  border-radius: 6px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'New Haas Unica W1G', 'helvetica', sans-serif;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid var(--black);
+}
+
+#contact button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: var(--black);
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+  }
+
+#contact button[type="submit"]:hover {
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+   
+#contact button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+::-webkit-input-placeholder {
+    color: #888;
+  }
+  
+  :-moz-placeholder {
+    color: #888;
+  }
+  
+  ::-moz-placeholder {
+    color: #888;
+  }
+  
+  :-ms-input-placeholder {
+    color: #888;
+  }
+
+
+
+
+
+
+  /*  Footer Stuff starts here  */
+
+
+.footerRow{
+    background-color: #F5F5F5;
+}
+
+.footerRow a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.footerContent{
+    margin: 0 var(--1xspacing);
+    border-top: 1px solid var(--black);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footerlogo{
+    width: 160px;
+    margin: var(--2xspacing) 0;
+}
+
+
+.footerContent a {
+    margin: 0 0 20px 0;
+}
+
+.socialRow{
+    margin: var(--1xspacing) 0 0 0;
+}
+
+.socialIcons{
+        margin: 0 0 0 var(--1xspacing);
+    }
+    
+    .socialRow a>img {
+        width: 32px;
+        margin: 0 24px 0 0;
+    }
+    
+    .socialRow p {
+        margin: var(--1xspacing);
+        font-size:12px;
+        color: var(--gray);
+    
+    }
+
+
+
+}
 
 
 
@@ -69,44 +422,388 @@ body{
 
 
  /* tiny devices (phones, below 480px) */
- @media only screen and (max-width: 480px) {
-    .welcometitle{
-        width: 95vw;
-        margin: 0 auto;
-        text-align: left;
-       }
+ @media only screen and (min-width: 481px) {
+    
 
-       .demoCTA{
+
+    /*  This makes the BG video work  */
+    .bannerVideo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        min-width: 100%;
+        height: auto;
+        min-height: 100%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: -1;
+        }
+    
+    .headerLogo {
+        fill: var(--white);
+        width: 120px;
+    }
+    
+    .masterContainer{
+        width: 100%;
+    }
+    
+    /*  This sets up the flexbox for the whole body  */
+    .gutterContainer{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    
+    /*  This holds the hero row including the BG video  */
+    .heroRow{
+        position: relative;
+        overflow: hidden;
+        color: #ffffff;
+        padding: 20vw var(--1xspacing);
+    }
+    
+    .navHeader{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 20vw 0;
+    }
+    
+    
+    /*  Text Links  */
+    .menuItem{
+     display: none;
+    }
+    
+    .menuCTA{
         display: block;
-        width: 100px;
-        height: 40px;
-        margin: 40px auto;
-        background-color: var(--black);
-        border-radius: 6px;
-        color: var(--white);
-        text-decoration: none;
-        font-size: 16px;
-        font-style: bold;
+        border-radius: 8px;
+        background-color: var(--white);
+        color: var(--black);
         line-height: 42px;
+        width: 25vw;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    
+    .heroHeadline{
+        margin: 0 0 20vw 0;
         text-align: center;
     }
     
-    .demoCTA:hover{
-        opacity: 0.9;
+    .videoBtn{
+     display: block;
+     width: 120px;
+     height: 120px;
+     border-radius: 60px;
+     border: 1px solid #ffffff;
+     text-align: center;
+     line-height: 120px;
+     margin:0 auto;
     }
- }
-
-
-
-
-
-  /* small devices (phones, between 600px and 480px) */
-@media only screen and (min-width: 481px) {
-    .welcometitle{
-        width: 90vw;
-        margin: 0 auto;
-       }
-}
+    
+    .videoBtn:hover{
+        background-color: #fff;
+        color: var(--black);
+    }
+    
+    .videoLink{
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    
+    
+    
+    
+    /*  Hero section ends here  */
+    
+    
+    
+    .subheaderRow{
+        margin: var(--3xspacing) var(--1xspacing) var(--2xspacing) var(--1xspacing);
+        padding: 0 0 var(--3xspacing) 0;
+        border-bottom: 1px solid var(--black);
+    }
+    
+    
+    /*  Three Reasons  */
+    .threeReasonsRow{
+        margin: 0 var(--1xspacing);
+    }
+    
+    .reason{
+        margin: 0 0 var(--2xspacing) 0;
+    }
+    
+    .reason h4 {
+        padding: 0 0 20px 0;
+    }
+    
+    .reason p {
+        line-height: 150%;
+    }
+    
+    
+    
+    
+    
+    
+    /*  The sidescolling gallery starts here  */
+    
+    .galleryRow{
+        background-color: var(--black);
+        margin: var(--2xspacing) 0;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: var(--3xspacing) var(--1xspacing) var(--3xspacing) 0;
+    }
+    
+    .galleryRow::-webkit-scrollbar {display: none;}
+    
+    .galleryRow img {
+        height: 40vh;
+        margin: 0 var(--1xspacing);
+    }
+    
+    .galleryPadding{
+        margin-right: var(--1xspacing);
+        color: var(--black);
+    }
+    
+    
+    
+    
+    
+    
+    /*  Capabilities Row starts here  */
+    
+    .capabilitiesIntroRow{
+        padding: var(--2xspacing) 0 0 0;
+        margin: 0 var(--1xspacing);
+    }
+    
+    .capabilitiesTitle{
+        font-size: 28px;
+        padding-bottom: var(--1xspacing);
+    }
+    
+    .capabilitiesContent h5 {
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 400;
+        padding: 0 0 var(--1xspacing) 0;
+    }
+    
+    
+    .capabilitiesContent ul {
+        list-style: none;
+    }
+    
+    .capabilitiesContent ul>li {
+        padding: 12px 0 0 0;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+    .capabilitiesColumns{
+        margin: 0 var(--1xspacing);
+    }
+    
+    .capabilitiesCategory{
+        border-top: 1px solid var(--black);
+        margin: var(--4xspacing) 0;
+    }
+    
+    .capabilitiesCategory h2 {
+        padding: 16px 0 0 0;
+    }
+    
+    .capabilitiesCategory ul {
+        
+        margin: var(--1xspacing) 0 var(--1xspacing) 16px;
+    }
+    
+    .capabilitiesCategory ul>li {
+        margin: 8px 0 0 0;
+        font-size: 12px;
+        font-weight: 700;
+    }
+    
+    
+    .categoryIntro{
+     font-size: 20px;
+     line-height: 150%;
+     margin: var(--1xspacing) 0;
+    }
+    
+    .categoryBody{
+        font-size: 16px;
+     line-height: 150%;
+        
+    }
+    
+    .disclaimer{
+        font-size: 12px;
+        font-style: italic;
+        color: var(--gray);
+    }
+    
+    
+    
+    
+    
+    
+    
+    /*  Contact Form stuff starts here  */
+    
+    
+    
+    .footerCTArow{
+        background-color: #F5F5F5;
+    }
+    
+    .footerCTArow h3{
+        margin: var(--3xspacing) var(--1xspacing);
+        text-align:center;
+        line-height: 125%;
+        font-size: 24px;
+    }
+    
+    #contact{
+        margin: 0 var(--1xspacing) var(--4xspacing) var(--1xspacing);
+    }
+    
+    fieldset {
+        border:none !important;
+        min-width: 100%;
+        padding: 0;
+        
+      }
+    
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact input[type="tel"],
+    #contact input[type="url"],
+    #contact textarea {
+      border: 1px solid #ccc;
+      background: #FFF;
+      padding: 10px;
+      margin: 0 0 16px 0;
+      width: 100%;
+      border-radius: 6px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: 'New Haas Unica W1G', 'helvetica', sans-serif;
+    }
+    
+    #contact input:focus,
+    #contact textarea:focus {
+      outline: 0;
+      border: 1px solid var(--black);
+    }
+    
+    #contact button[type="submit"] {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        background: var(--black);
+        color: #FFF;
+        margin: 0 0 5px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 6px;
+      }
+    
+    #contact button[type="submit"]:hover {
+        background: rgba(0, 0, 0, 0.8);
+        -webkit-transition: background 0.3s ease-in-out;
+        -moz-transition: background 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+      }
+       
+    #contact button[type="submit"]:active {
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    
+    
+    ::-webkit-input-placeholder {
+        color: #888;
+      }
+      
+      :-moz-placeholder {
+        color: #888;
+      }
+      
+      ::-moz-placeholder {
+        color: #888;
+      }
+      
+      :-ms-input-placeholder {
+        color: #888;
+      }
+    
+    
+    
+    
+    
+    
+      /*  Footer Stuff starts here  */
+    
+    
+    .footerRow{
+        background-color: #F5F5F5;
+    }
+    
+    .footerRow a {
+        text-decoration: none;
+        color: var(--black);
+    }
+    
+    .footerContent{
+        margin: 0 var(--1xspacing);
+        border-top: 1px solid var(--black);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .footerlogo{
+        width: 160px;
+        margin: var(--2xspacing) 0;
+    }
+    
+    
+    .footerContent a {
+        margin: 0 0 20px 0;
+    }
+    
+    .socialRow{
+        margin: var(--1xspacing) 0 0 0;
+    }
+    
+    .socialIcons{
+        margin: 0 0 0 var(--1xspacing);
+    }
+    
+    .socialRow a>img {
+        width: 32px;
+        margin: 0 24px 0 0;
+    }
+    
+    .socialRow p {
+        margin: var(--1xspacing);
+        font-size:12px;
+        color: var(--gray);
+    }
+    
+    }
 
 
 
@@ -116,7 +813,389 @@ body{
 /* Small devices (tablet portrait, above 600px) */
 @media only screen and (min-width: 601px) {
 
+
+    /*  This makes the BG video work  */
+    .bannerVideo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        min-width: 100%;
+        height: auto;
+        min-height: 100%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: -1;
+        }
+    
+    .headerLogo {
+        fill: var(--white);
+        width: 120px;
+    }
+    
+    .masterContainer{
+        width: 100%;
+    }
+    
+    /*  This sets up the flexbox for the whole body  */
+    .gutterContainer{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    
+    /*  This holds the hero row including the BG video  */
+    .heroRow{
+        position: relative;
+        overflow: hidden;
+        color: #ffffff;
+        padding: 5vw var(--1xspacing) 20vw var(--1xspacing);
+    }
+    
+    .navHeader{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 20vw 0;
+    }
+    
+    
+    /*  Text Links  */
+    .menuItem{
+     display: none;
+    }
+    
+    .menuCTA{
+        display: block;
+        border-radius: 8px;
+        background-color: var(--white);
+        color: var(--black);
+        line-height: 42px;
+        width: 100px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    
+    .heroHeadline{
+        margin: 0 var(--1xspacing) 10vw var(--1xspacing);
+        text-align: center;
+        font-size:36px;
+        line-height:125%;
+    }
+    
+    .videoBtn{
+     display: block;
+     width: 120px;
+     height: 120px;
+     border-radius: 60px;
+     border: 1px solid #ffffff;
+     text-align: center;
+     line-height: 120px;
+     margin:0 auto;
+    }
+    
+    .videoBtn:hover{
+        background-color: #fff;
+        color: var(--black);
+    }
+    
+    .videoLink{
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    
+    
+    
+    
+    /*  Hero section ends here  */
+    
+    
+    
+    .subheaderRow{
+        margin: var(--3xspacing) var(--1xspacing) var(--1xspacing) var(--1xspacing);
+        padding: 0 0 var(--2xspacing) 0;
+        border-bottom: 1px solid var(--black);
+        font-size:24px;
+    }
+    
+    
+    /*  Three Reasons  */
+    .threeReasonsRow{
+        margin: 0 var(--1xspacing);
+    }
+    
+    .reason{
+        margin: 0 0 var(--2xspacing) 0;
+    }
+    
+    .reason h4 {
+        padding: 0 0 20px 0;
+    }
+    
+    .reason p {
+        line-height: 150%;
+        padding-right: var(--3xspacing);
+    }
+    
+    
+    
+    
+    
+    
+    /*  The sidescolling gallery starts here  */
+    
+    .galleryRow{
+        background-color: var(--black);
+        margin: var(--2xspacing) 0;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: var(--3xspacing) var(--1xspacing) var(--3xspacing) 0;
+    }
+    
+    .galleryRow::-webkit-scrollbar {display: none;}
+    
+    .galleryRow img {
+        height: 40vh;
+        margin: 0 var(--1xspacing);
+    }
+    
+    .galleryPadding{
+        margin-right: var(--1xspacing);
+        color: var(--black);
+    }
+    
+    
+    
+    
+    
+    
+    /*  Capabilities Row starts here  */
+    
+    .capabilitiesIntroRow{
+        padding: var(--2xspacing) 0 0 0;
+        margin: 0 var(--1xspacing);
+    }
+    
+    .capabilitiesTitle{
+        font-size: 36px;
+        padding-bottom: var(--1xspacing);
+    }
+    
+    .capabilitiesContent h5 {
+        font-size: 25px;
+        line-height: 150%;
+        font-weight: 400;
+        padding: 0 0 var(--1xspacing) 0;
+    }
+    
+    
+    .capabilitiesContent ul {
+        list-style: none;
+    }
+    
+    .capabilitiesContent ul>li {
+        padding: 12px 0 0 0;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+    .capabilitiesColumns{
+        margin: 0 var(--1xspacing);
+    }
+    
+    .capabilitiesCategory{
+        border-top: 1px solid var(--black);
+        margin: var(--3xspacing) 0;
+    }
+    
+    .capabilitiesCategory h2 {
+        padding: 16px 0 0 0;
+        font-size: 31px;
+    }
+    
+    .capabilitiesCategory ul {
+        
+        margin: var(--1xspacing) 0 var(--1xspacing) 16px;
+    }
+    
+    .capabilitiesCategory ul>li {
+        margin: 8px 0 0 0;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    
+    .categoryIntro{
+     font-size: 25px;
+     line-height: 150%;
+     margin: var(--1xspacing) 0;
+    }
+    
+    .categoryBody{
+        font-size: 20px;
+     line-height: 150%;
+        
+    }
+    
+    .disclaimer{
+        font-size: 12px;
+        font-style: italic;
+        color: var(--gray);
+    }
+    
+    
+    
+    
+    
+    
+    
+    /*  Contact Form stuff starts here  */
+    
+    
+    
+    .footerCTArow{
+        background-color: #F5F5F5;
+    }
+    
+    .footerCTArow h3{
+        margin: var(--3xspacing) var(--1xspacing);
+        text-align:center;
+        line-height: 125%;
+        font-size: 36px;
+    }
+    
+    #contact{
+        margin: 0 var(--3xspacing) var(--4xspacing) var(--3xspacing);
+    }
+    
+    fieldset {
+        border:none !important;
+        min-width: 100%;
+        padding: 0;
+        
+      }
+    
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact input[type="tel"],
+    #contact input[type="url"],
+    #contact textarea {
+      border: 1px solid #ccc;
+      background: #FFF;
+      padding: 10px;
+      margin: 0 0 16px 0;
+      width: 100%;
+      border-radius: 6px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: 'New Haas Unica W1G', 'helvetica', sans-serif;
+    }
+    
+    #contact input:focus,
+    #contact textarea:focus {
+      outline: 0;
+      border: 1px solid var(--black);
+    }
+    
+    #contact button[type="submit"] {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        background: var(--black);
+        color: #FFF;
+        margin: 0 0 5px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 6px;
+      }
+    
+    #contact button[type="submit"]:hover {
+        background: rgba(0, 0, 0, 0.8);
+        -webkit-transition: background 0.3s ease-in-out;
+        -moz-transition: background 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+      }
+       
+    #contact button[type="submit"]:active {
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    
+    
+    ::-webkit-input-placeholder {
+        color: #888;
+      }
+      
+      :-moz-placeholder {
+        color: #888;
+      }
+      
+      ::-moz-placeholder {
+        color: #888;
+      }
+      
+      :-ms-input-placeholder {
+        color: #888;
+      }
+    
+    
+    
+    
+    
+    
+      /*  Footer Stuff starts here  */
+    
+    
+    .footerRow{
+        background-color: #F5F5F5;
+    }
+    
+    .footerRow a {
+        text-decoration: none;
+        color: var(--black);
+    }
+    
+    .footerContent{
+        margin: 0 var(--1xspacing);
+        border-top: 1px solid var(--black);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .footerlogo{
+        width: 160px;
+        margin: var(--1xspacing) 0;
+    }
+    
+    
+    .footerContent a {
+        margin: 0 0 20px 0;
+    }
+   
+    .socialIcons{
+        margin: 0 0 0 var(--1xspacing);
+    }
+    
+    .socialRow a>img {
+        width: 32px;
+        margin: 0 24px 0 0;
+    }
+    
+    .socialRow p {
+        margin: var(--1xspacing);
+        font-size:12px;
+        color: var(--gray);
+    }
+
+
 }
+
+
 
 
 
@@ -124,6 +1203,428 @@ body{
 
 /* Medium devices (tablet landscape, above 900px) */
 @media only screen and (min-width: 900px) {
+
+        /*  This makes the BG video work  */
+.bannerVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    }
+
+.headerLogo {
+    fill: var(--white);
+    width: 240px;
+}
+
+.masterContainer{
+    width: 100%;
+}
+
+/*  This sets up the flexbox for the whole body  */
+.gutterContainer{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/*  This holds the hero row including the BG video  */
+.heroRow{
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    padding: 5vw var(--1xspacing) 20vw var(--1xspacing);
+}
+
+.navHeader{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20vw 0;
+}
+
+
+.navLinks{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+/*  Text Links  */
+.menuItem{
+    display: inline;
+    line-height: 42px;
+    text-align: right;
+    margin-right:50px;
+    color: #fff;
+    font-style: bold;
+    text-decoration: none;
+}
+
+.menuCTA{
+    display: block;
+    border-radius: 8px;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 42px;
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.menuCTA:hover{
+    background-color: var(--black);
+    color: #fff;
+}
+
+.heroHeadline{
+    margin: 0 var(--1xspacing) 10vw var(--1xspacing);
+    text-align: center;
+    font-size:48px;
+    line-height:125%;
+}
+
+.videoBtn{
+ display: block;
+ width: 120px;
+ height: 120px;
+ border-radius: 60px;
+ border: 1px solid #ffffff;
+ text-align: center;
+ line-height: 120px;
+ margin:0 auto;
+}
+
+.videoBtn:hover{
+    background-color: #fff;
+    color: var(--black);
+}
+
+.videoLink{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+/*  Hero section ends here  */
+
+
+
+.subheaderRow{
+    margin: var(--2xspacing) var(--1xspacing) var(--1xspacing) var(--1xspacing);
+    padding: 0 0 var(--1xspacing) 0;
+    border-bottom: 1px solid var(--black);
+    font-size:24px;
+}
+
+
+/*  Three Reasons  */
+.threeReasonsRow{
+    margin: 0 var(--1xspacing);
+    display: flex;
+    flex-direction: :default;
+    justify-content: space-between;
+}
+
+.reason{
+    width: 30%;
+    margin: 0;
+}
+
+.reason h4 {
+    padding: 0 0 20px 0;
+}
+
+.reason p {
+    line-height: 150%;
+    padding: 0;
+}
+
+
+
+
+
+
+/*  The sidescolling gallery starts here  */
+
+.galleryRow{
+    background-color: var(--black);
+    margin: var(--2xspacing) 0;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: var(--2xspacing) var(--1xspacing) var(--2xspacing) 0;
+}
+
+.galleryRow::-webkit-scrollbar {display: none;}
+
+.galleryRow img {
+    height: 40vh;
+    margin: 0 var(--1xspacing);
+}
+
+.galleryPadding{
+    margin-right: var(--1xspacing);
+    color: var(--black);
+}
+
+
+
+
+
+
+/*  Capabilities Row starts here  */
+
+.capabilitiesIntroRow{
+    padding: 0;
+    margin: 0 var(--1xspacing);
+}
+
+.capabilitiesTitle{
+    font-size: 36px;
+    padding-bottom: var(--1xspacing);
+}
+
+.capabilitiesContent h5 {
+    font-size: 25px;
+    line-height: 150%;
+    font-weight: 400;
+    padding: 0 0 var(--1xspacing) 0;
+    width: 40%;
+    float: left;
+    margin: 0 10% 0 0;
+}
+
+
+.capabilitiesContent ul {
+    list-style: none;
+
+}
+
+.capabilitiesContent ul>li {
+    padding: 12px 0 0 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.capabilitiesColumns{
+    margin: 0 var(--1xspacing);
+    display: flex;
+    justify-content: space-between;
+}
+
+.capabilitiesCategory{
+    border-top: 1px solid var(--black);
+    margin: var(--2xspacing) 0;
+    width: 47.5%;
+}
+
+.capabilitiesCategory h2 {
+    padding: 16px 0 0 0;
+    font-size: 31px;
+}
+
+.capabilitiesCategory ul {
+    
+    margin: 40px 0 var(--1xspacing) 16px;
+}
+
+.capabilitiesCategory ul>li {
+    margin: 8px 0 0 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.categoryIntro{
+ font-size: 25px;
+ line-height: 150%;
+ margin: 40px 0;
+}
+
+.categoryBody{
+    font-size: 20px;
+ line-height: 150%;
+    
+}
+
+.disclaimer{
+    font-size: 12px;
+    font-style: italic;
+    color: var(--gray);
+}
+
+
+
+
+
+
+
+/*  Contact Form stuff starts here  */
+
+
+
+.footerCTArow{
+    background-color: #F5F5F5;
+}
+
+.footerCTArow h3{
+    margin: var(--2xspacing) var(--2xspacing) var(--1xspacing) var(--2xspacing);
+    text-align:center;
+    line-height: 125%;
+    font-size: 39px;
+}
+
+#contact{
+    margin: 0 var(--3xspacing) var(--2xspacing) var(--3xspacing);
+}
+
+fieldset {
+    border:none !important;
+    min-width: 100%;
+    padding: 0;
+    
+  }
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  border: 1px solid #ccc;
+  background: #FFF;
+  padding: 10px;
+  margin: 0 0 16px 0;
+  width: 100%;
+  border-radius: 6px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'New Haas Unica W1G', 'helvetica', sans-serif;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid var(--black);
+}
+
+#contact button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: var(--black);
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+  }
+
+#contact button[type="submit"]:hover {
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+   
+#contact button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+::-webkit-input-placeholder {
+    color: #888;
+  }
+  
+  :-moz-placeholder {
+    color: #888;
+  }
+  
+  ::-moz-placeholder {
+    color: #888;
+  }
+  
+  :-ms-input-placeholder {
+    color: #888;
+  }
+
+
+
+
+
+
+  /*  Footer Stuff starts here  */
+
+
+.footerRow{
+    background-color: #F5F5F5;
+
+}
+
+.footerRow a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.footerContent{
+    margin: 0 var(--1xspacing);
+    border-top: 1px solid var(--black);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.footerlogo{
+    height: 30px;
+    margin: 32px 0;
+}
+
+
+.footerNavLinks{
+    width: 45%;
+    padding-top: 40px;
+    text-align: right;
+}
+
+
+.footerNavLinks a {
+    padding-left:40px;
+}
+
+.socialRow{
+    margin: var(--1xspacing) 0 0 0;
+    margin: 0 var(--1xspacing);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.socialRow a>img {
+    width: 32px;
+    margin: 40px 24px 0 0;
+}
+
+.socialRow p {
+    margin: 52px 0 var(--1xspacing) 0;
+    font-size:12px;
+    color: var(--gray);
+}
 
 }
 
@@ -133,6 +1634,436 @@ body{
 
 /* Standard devices (laptop, above 1200px) */
 @media only screen and (min-width: 1200px) {
+
+   /*  This makes the BG video work  */
+   .bannerVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    }
+
+.headerLogo {
+    fill: var(--white);
+    width: 240px;
+}
+
+.masterContainer{
+    width: 100%;
+}
+
+/*  This sets up the flexbox for the whole body  */
+.gutterContainer{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/*  This holds the hero row including the BG video  */
+.heroRow{
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    padding: 5vw var(--1xspacing) 10vw var(--1xspacing);
+}
+
+.navHeader{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 10vw 0;
+}
+
+.navLinks{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+/*  Text Links  */
+.menuItem{
+    display: inline;
+    line-height: 42px;
+    text-align: right;
+    margin-right:50px;
+    color: #fff;
+    font-style: bold;
+    text-decoration: none;
+}
+
+.menuItem:hover{
+    opacity: 0.75;
+}
+
+.menuCTA{
+    display: block;
+    border-radius: 8px;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 42px;
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.menuCTA:hover{
+    background-color: var(--black);
+    color: #fff;
+}
+
+.heroHeadline{
+    margin: 0 var(--2xspacing) 5vw var(--2xspacing);
+    text-align: center;
+    font-size:48px;
+    line-height:125%;
+}
+
+.videoBtn{
+ display: block;
+ width: 120px;
+ height: 120px;
+ border-radius: 60px;
+ border: 1px solid #ffffff;
+ text-align: center;
+ line-height: 120px;
+ margin:0 auto;
+}
+
+.videoBtn:hover{
+    background-color: #fff;
+    color: var(--black);
+}
+
+.videoLink{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+/*  Hero section ends here  */
+
+
+
+.subheaderRow{
+    margin: var(--1xspacing) var(--1xspacing) var(--1xspacing) var(--1xspacing);
+    padding: 0 0 var(--1xspacing) 0;
+    border-bottom: 1px solid var(--black);
+    font-size:24px;
+}
+
+
+/*  Three Reasons  */
+.threeReasonsRow{
+    margin: 0 var(--1xspacing);
+    display: flex;
+    flex-direction: :default;
+    justify-content: space-between;
+}
+
+.reason{
+    width: 30%;
+    margin: 0;
+}
+
+.reason h4 {
+    padding: 0 0 20px 0;
+}
+
+.reason p {
+    line-height: 150%;
+    padding: 0;
+}
+
+
+
+
+
+
+/*  The sidescolling gallery starts here  */
+
+.galleryRow{
+    background-color: var(--black);
+    margin: var(--1xspacing) 0 0 0;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: var(--1xspacing) var(--1xspacing) var(--1xspacing) 0;
+}
+
+.galleryRow::-webkit-scrollbar {display: none;}
+
+.galleryRow img {
+    height: 50vh;
+    margin: 0 var(--1xspacing);
+}
+
+.galleryPadding{
+    margin-right: var(--1xspacing);
+    color: var(--black);
+}
+
+
+
+
+
+
+/*  Capabilities Row starts here  */
+
+.capabilitiesIntroRow{
+    padding: var(--2xspacing) 0 0 0;
+    margin: 0 var(--1xspacing);
+}
+
+.capabilitiesTitle{
+    font-size: 36px;
+    padding-bottom: var(--1xspacing);
+}
+
+.capabilitiesContent h5 {
+    font-size: 25px;
+    line-height: 150%;
+    font-weight: 400;
+    padding: 0 0 var(--1xspacing) 0;
+    width: 50%;
+    float: left;
+    margin: 0 5% 0 0;
+}
+
+
+.capabilitiesContent ul {
+    list-style: none;
+    columns: 2;
+}
+
+.capabilitiesContent ul>li {
+    padding: 12px 0 0 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.capabilitiesColumns{
+    margin: 0 var(--1xspacing);
+    display: flex;
+    justify-content: space-between;
+}
+
+.capabilitiesCategory{
+    border-top: 1px solid var(--black);
+    margin: var(--1xspacing) 0 var(--2xspacing) 0;
+    width: 47.5%;
+}
+
+.capabilitiesCategory h2 {
+    padding: 16px 0 0 0;
+    font-size: 31px;
+}
+
+.capabilitiesCategory ul {
+    
+    margin: 40px 0 var(--1xspacing) 16px;
+}
+
+.capabilitiesCategory ul>li {
+    margin: 8px 0 0 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.categoryIntro{
+ font-size: 25px;
+ line-height: 150%;
+ margin: 40px 0;
+}
+
+.categoryBody{
+    font-size: 20px;
+ line-height: 150%;
+    
+}
+
+.disclaimer{
+    font-size: 12px;
+    font-style: italic;
+    color: var(--gray);
+}
+
+
+
+
+
+
+
+/*  Contact Form stuff starts here  */
+
+
+
+.footerCTArow{
+    background-color: #F5F5F5;
+}
+
+.footerCTArow h3{
+    margin: var(--2xspacing) var(--4xspacing) var(--1xspacing) var(--4xspacing);
+    text-align:center;
+    line-height: 125%;
+    font-size: 39px;
+}
+
+#contact{
+    margin: 0 var(--4xspacing) var(--2xspacing) var(--4xspacing);
+}
+
+fieldset {
+    border:none !important;
+    min-width: 100%;
+    padding: 0;
+    
+  }
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  border: 1px solid #ccc;
+  background: #FFF;
+  padding: 10px;
+  margin: 0 0 16px 0;
+  width: 100%;
+  border-radius: 6px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'New Haas Unica W1G', 'helvetica', sans-serif;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid var(--black);
+}
+
+#contact button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: var(--black);
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+  }
+
+#contact button[type="submit"]:hover {
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+  }
+   
+#contact button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+::-webkit-input-placeholder {
+    color: #888;
+  }
+  
+  :-moz-placeholder {
+    color: #888;
+  }
+  
+  ::-moz-placeholder {
+    color: #888;
+  }
+  
+  :-ms-input-placeholder {
+    color: #888;
+  }
+
+
+
+
+
+
+  /*  Footer Stuff starts here  */
+
+
+.footerRow{
+    background-color: #F5F5F5;
+
+}
+
+.footerRow a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.footerContent{
+    margin: 0 var(--1xspacing);
+    border-top: 1px solid var(--black);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.footerlogo{
+    height: 30px;
+    margin: 32px 0;
+}
+
+
+.footerNavLinks{
+    width: 45%;
+    padding-top: 40px;
+    text-align: right;
+}
+
+
+.footerNavLinks a {
+    padding-left:40px;
+}
+
+.socialRow{
+    margin: var(--1xspacing) 0 0 0;
+    margin: 0 var(--1xspacing);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.socialIcons{
+    margin: 0;
+}
+
+.socialRow a>img {
+    width: 32px;
+    margin: 40px 24px 0 0;
+}
+
+.socialRow p {
+    margin: 52px 0 var(--1xspacing) 0;
+    font-size:12px;
+    color: var(--gray);
+}
+
+
 
 }
 
